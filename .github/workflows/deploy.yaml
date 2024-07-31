@@ -25,4 +25,7 @@ jobs:
                       git pull origin main
 
                       # Build and run Docker Compose
-                      bash dev.sh
+                      docker-compose down
+                      docker-compose up --build -d
+                      docker image prune -f
+                      echo "Deployment completed successfully"
